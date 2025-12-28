@@ -12,7 +12,7 @@ st.title("Cardiac Compass – Heart Disease Prediction")
 
 @st.cache_resource
 def train_model():
-    df = pd.read_csv("heart_data.csv")
+    df = pd.read_csv("./heart_data.csv")
 
     if "Unnamed: 0" in df.columns:
         df = df.drop(columns=["Unnamed: 0"])
@@ -33,7 +33,7 @@ def train_model():
     )
 
     model = RandomForestClassifier(
-        n_estimators=400,
+        n_estimators=300,
         max_depth=50,
         random_state=42
     )
